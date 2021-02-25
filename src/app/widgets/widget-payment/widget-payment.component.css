@@ -19,3 +19,8 @@
 .payment.selected img {
   filter: invert();
 }
+
+.payment:hover {
+  background-color: #abcbe894;
+  transform: scale(0.95);
+}

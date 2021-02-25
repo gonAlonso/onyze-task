@@ -1,20 +1,20 @@
 <div>
   <div class='header'>
-    <img src='{{image}}'>
-    <span class='name'>{{name}}</span>
-    <span class='statics'>{{interactions}} interactions</span>
+    <img src='{{(passenger|async)?.image}}'>
+    <span class='name'>{{(passenger|async)?.name}}</span>
+    <span class='statics'>{{(passenger|async)?.interactions}} interactions</span>
   </div>
 
   <div class='email atribute'>
     <span class='label'>Email</span>
-    <span class='value'>{{email}}</span>
+    <span class='value'>{{(passenger|async)?.email}}</span>
   </div>
   <div class='phone atribute'>
     <span class='label'>Phone</span>
-    <span class='value'>{{phone}}</span>
+    <span class='value'>{{(passenger|async)?.phone}}</span>
   </div>
   <div class='location atribute'>
     <span class='label'>Location</span>
-    <span class='value'>{{location}}</span>
+    <span class='value'>{{(passenger|async)?.location}}</span>
   </div>
 </div>

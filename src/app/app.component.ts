@@ -1,3 +1,4 @@
+import { Observable, ReplaySubject } from 'rxjs';
 import { Component } from '@angular/core';
 import { Journey } from './models/journey';
 import { Payment } from './models/payment';
@@ -10,13 +11,17 @@ import { Payment } from './models/payment';
 
 export class AppComponent {
   title = 'Onyze';
-  public journeys: Journey[];
-  public payments: Payment[];
 
-  constructor() {
-    this.journeys = [{
+  public item1: Observable<Journey>;
+  public item2: Observable<Journey>;
+  public item3: Observable<Journey>;
+
+  public journeys = [
+    {
       id: 1,
       passenger: {
+        image: 'assets/images.png',
+        interactions: 3,
         email: 'invision@invisionapp.com',
         location: 'New York, NY',
         phone: '+144-3412-4422',
@@ -38,6 +43,8 @@ export class AppComponent {
     {
       id: 2,
       passenger: {
+        image: 'assets/images.png',
+        interactions: 1,
         email: 'test@example.com',
         location: 'Sagrada Familia, BCN',
         phone: '+900-800-700',
@@ -59,6 +66,8 @@ export class AppComponent {
     {
       id: 3,
       passenger: {
+        image: 'assets/images.png',
+        interactions: 17,
         email: 'example@test.com',
         location: 'Oviedo, Asturias',
         phone: '+34-600-400-200',
@@ -78,5 +87,19 @@ export class AppComponent {
       time: 28
     },
   ];
+
+
+  constructor() {
+    this.item1 = new Observable<Journey>(
+      obs => obs.next(this.journeys[0])
+    );
+
+    this.item2 = new Observable<Journey>(
+      obs => obs.next(this.journeys[1])
+    );
+    this.item3 = new Observable<Journey>(
+      obs => obs.next(this.journeys[2])
+    );
+
   }
 }
