@@ -1,0 +1,47 @@
+<div class='widget_journey'>
+  <div class='passenger_info' [class.hidden]="hideInfo">
+  <h3 class='title'>Passenger info</h3>
+  <app-passenger-info></app-passenger-info>
+  </div>
+  <div class='hide_button'>
+    <span>Hide information</span>
+    <input type="checkbox" (change)='hideInfo= !hideInfo'/>
+  </div>
+  <div class='payments'>
+    <app-widget-payment *ngFor='let item of payments'
+      [selection]='selection'
+      [payment]='item' (selected)="paymentSelected($event)">
+    </app-widget-payment>
+  </div>
+  <div class='destiny_origin'>
+    <span class='icon origin'>.</span>
+    <span class='line'></span>
+    <span class='icon destiny'>.</span>
+    <div class='origin'>
+      <span class='name'>{{originName}}</span>
+      <span class='address'>{{originAdress}}</span>
+    </div>
+    <div class='destiny'>
+      <span class='name'>{{destinyName}}</span>
+      <span class='address'>{{destinyAdress}}</span>
+    </div>
+  </div>
+  <div class='statics'>
+    <div class='distance'>
+      <span class='value'>{{distance}} km</span>
+      <span class='label'>Distance</span>
+    </div>
+    <div class='time'>
+      <span class='value'>{{time}} min</span>
+      <span class='label'>Time</span>
+    </div>
+    <div class='price'>
+      <span class='value'>${{price}}</span>
+      <span class='label'>Price</span>
+    </div>
+    <div class='energy'>
+      <span class='value'>{{energy}} kWh</span>
+      <span class='label'>Energy</span>
+    </div>
+  </div>
+</div>

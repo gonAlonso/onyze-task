@@ -1,0 +1,146 @@
+
+.widget_journey {
+  box-shadow: 0px 0px 3px 0px;
+  display: grid;
+  grid-auto-columns: 2fr 3fr;
+  position: relative;
+  padding: 20px;
+  margin: 40px;
+}
+/*
+.widget_journey > * {
+  border: 1px solid red;
+}
+*/
+.passenger_info h3 {
+  text-transform: uppercase;
+  color: #5557;
+}
+
+.hide_button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.passenger_info {
+  margin-top: 15px;
+}
+
+.passenger_info h3 {
+  text-transform: uppercase;
+  color: #5557;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+}
+app-passenger-info {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+app-widget-payment {
+  height: 68px;
+  display: inline-block;
+  width: calc(50% - 10px);
+  margin: 5px;
+}
+
+.payments {
+  grid-column: 2;
+  grid-row: 1;
+  /* margin: 0 15%; */
+  padding: 45px 10px 10px 10px;
+}
+
+.destiny_origin {
+  grid-column: 1 / 3;
+  margin: 0 15%;
+  padding: 30px;
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+
+}
+
+.icon.origin{
+  background-color: red;
+  grid-column: 1;
+}
+.icon.destiny{
+  background-color: blue;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.destiny_origin > div > span {
+  display: block;
+}
+.destiny_origin span.address {
+  color: #5558;
+  font-size: 9pt;
+}
+.line {
+  grid-column: 1 / 3;
+  height: 1px;
+  background-color: #5558;
+  width: 36%;
+  margin: -8px 0 17px 50px;
+}
+
+
+.origin {
+  grid-column: 1;
+}
+
+.destiny {
+  grid-column: 2;
+}
+
+.statics {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-auto-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 15%;
+  border-top: 1px solid #7776;
+  padding: 20px;
+}
+
+.statics span {
+  display: block;
+  text-align: center;
+}
+
+.statics span.value {
+  font-size: 14pt;
+}
+
+.statics .label {
+  font-size: 8pt;
+  color: #5557;
+}
+
+.distance {
+  grid-column: 1;
+}
+
+.time {
+  grid-column: 2;
+}
+
+.price {
+  grid-column: 3;
+}
+.energy {
+  grid-column: 4;
+}
+
+.hidden {
+  visibility: hidden !important;
+  display: none;
+}

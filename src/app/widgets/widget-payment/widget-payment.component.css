@@ -1,0 +1,21 @@
+.payment {
+ height: 100%;
+  width: 100%;
+  margin: 5px;
+  border: 1px solid #5558;
+  border-radius: 4px;
+  display: flex;
+}
+
+.payment img {
+  height: 50%;
+  margin: 12px auto;
+}
+
+.selected {
+  background-color: #1a73e8;
+}
+
+.payment.selected img {
+  filter: invert();
+}
