@@ -19,9 +19,11 @@
   <div class='details' [class.hide]="hideInfo">
 
     <div class='destiny_origin'>
-      <span class='icon origin'>.</span>
-      <span class='line'></span>
-      <span class='icon destiny'>.</span>
+      <div class='icons'>
+        <i class='icon origin fa fa-check'></i>
+        <!-- <span class='line'></span> -->
+        <i class='icon destiny fa fa-map-marker'></i>
+      </div>
       <div class='origin'>
         <span class='name'>{{(journeyObs | async)?.origin.name}}</span>
         <span class='address'>{{(journeyObs | async)?.origin.address}}</span>

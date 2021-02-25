@@ -7,20 +7,15 @@
   padding: 20px;
   margin: 40px;
   min-width: 420px;
+  max-width: 900px;
 }
-/*
-.widget_journey > * {
-  border: 1px solid red;
-}
-*/
+
 .passenger_info h3 {
   text-transform: uppercase;
   color: #5557;
 }
 
-.passenger_info {
-  margin-top: 15px;
-}
+.passenger_info {margin-top: 15px;}
 
 .passenger_info h3 {
   text-transform: uppercase;
@@ -37,7 +32,6 @@ app-passenger-info {
 app-widget-payment {
   height: 65px;
   display: inline-block;
-  /* width: calc(50% - 10px); */
   margin: 5px 5px;
   width: 120px;
 }
@@ -50,16 +44,7 @@ app-widget-payment {
   grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 820px) {
-  .payments {
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-auto-rows: 1fr 1fr; */
-  }
-}
-
-.details {
-  grid-column: 1 / 3;
-}
+.details {grid-column: 1 / 3;}
 
 .details.hide {
   height: 0;
@@ -80,22 +65,53 @@ app-widget-payment {
   padding: 30px;
   display: grid;
   grid-auto-columns: 1fr 1fr;
-
 }
 
+.icons {position: relative;}
+
+.icons .icon {
+  display: inline-block !important;
+  margin-bottom: 1em;
+}
 .icon.origin{
-  background-color: red;
-  grid-column: 1;
+  background-color: #9adaf2bd;
+  color: #173197;
+  font-weight: bolder;
+  text-align: center;
 }
-.icon.destiny{
-  background-color: blue;
-  grid-column: 2;
-  grid-row: 1;
+.icon.origin::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: #4c73eaa1;
+  width: calc(100% - 3em);
+  display: inline-block;
+  top: 35%;
+  left: 2em;
+}
+
+.icon.destiny {
+  background-color: #89f9c4;
+  position: absolute;
+  right: -5%;
+  top: 0.3em;
+  color: #49ae1b;
+}
+
+.icon.origin::before {
+  position: relative;
+  top: 0.5em;
+}
+
+.icon.destiny::before {
+  left: 0.5em;
+  position: relative;
+  top: 0.5em;
 }
 
 .icon {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
 
@@ -115,13 +131,8 @@ app-widget-payment {
 }
 
 
-.origin {
-  grid-column: 1;
-}
-
-.destiny {
-  grid-column: 2;
-}
+.origin {grid-column: 1;}
+.destiny {grid-column: 2;}
 
 .statics {
   grid-column: 1 / 3;
@@ -132,13 +143,8 @@ app-widget-payment {
   padding: 20px;
 }
 
-.statics span {
-  display: block;
-}
-
-.statics span.value {
-  font-size: 11pt;
-}
+.statics span {display: block;}
+.statics span.value {font-size: 11pt;}
 
 .statics .label {
   font-size: 8pt;
@@ -146,20 +152,10 @@ app-widget-payment {
   margin-bottom: 0.4em;
 }
 
-.distance {
-  grid-column: 1;
-}
-
-.time {
-  grid-column: 2;
-}
-
-.price {
-  grid-column: 3;
-}
-.energy {
-  grid-column: 4;
-}
+.distance {grid-column: 1;}
+.time {grid-column: 2;}
+.price {grid-column: 3;}
+.energy {grid-column: 4;}
 
 .hidden {
   visibility: hidden !important;
@@ -206,4 +202,11 @@ input[type="checkbox"]:checked {
 .hide_button input:checked::before {
   left: 1.1rem;
   transition: left 500ms linear;
+}
+
+
+@media (min-width: 820px) {
+  .payments {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
